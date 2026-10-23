@@ -8,11 +8,11 @@ This repository distributes SuperWriter installers and release information. Appl
 
 ## 下载 / Download
 
-**macOS 1.3.9 发布准备中（Apple Silicon / M 系列芯片）**
+**当前版本：1.3.9 · macOS Apple Silicon（M 系列芯片）**
 
-当前网络导致大文件上传中断，安装包尚未公开发布。README 和更新元数据已准备，待安装包上传并验证后再开放下载。
-
-- [查看已公开的版本](https://github.com/lunyang/SuperWriter-release/releases)
+- [下载 macOS 安装包（约 415 MB）](https://github.com/lunyang/SuperWriter-release/releases/download/v1.3.9/SuperWriter_1.3.9_aarch64.dmg)
+- [查看发布说明和全部附件](https://github.com/lunyang/SuperWriter-release/releases/tag/v1.3.9)
+- [查看所有版本](https://github.com/lunyang/SuperWriter-release/releases)
 
 本次仅发布 macOS ARM64 版本，不包含 Intel Mac、Windows 或 Linux 安装包。此版本已在构建机器上通过产物检查；不同 macOS 版本的兼容性仍需实际验证。
 
