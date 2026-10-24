@@ -2,9 +2,11 @@
 
 AI 辅助科研写作桌面应用 · AI-assisted research writing desktop app
 
-本仓库是 SuperWriter 的官方安装包发布仓库，只提供安装包、版本说明和更新元数据。应用源码不在本仓库中公开。
+官方网站 / Official website: [ai4scis.com](https://www.ai4scis.com/)
 
-This repository distributes SuperWriter installers and release information. Application source code is not published here.
+本仓库用于发布 SuperWriter 安装包、版本说明和更新元数据。
+
+This repository distributes SuperWriter installers, release notes, and update metadata.
 
 ## 下载 / Download
 
