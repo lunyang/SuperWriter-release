@@ -44,17 +44,27 @@ shasum -a 256 SuperWriter_1.3.10_aarch64.dmg
 
 将结果与 `SHA256SUMS.txt` 中该文件的记录比较。更新签名不等于 Apple 公证。
 
-## 自动更新状态 / Updater status
+## macOS 安装问题 / macOS installation issues
 
-1.3.10 已将内置自动更新地址迁移到 GitHub Releases：`https://github.com/lunyang/SuperWriter-release/releases/latest/download/latest.json`。后续正式版本会通过该清单检查更新，并验证更新归档的签名。
+如果 macOS 提示“无法验证开发者”，请先确认下载来源和 SHA-256 校验值，然后右键（或按住 Control 点按）`SuperWriter.app`，选择“打开”，再确认一次。也可以在“系统设置 → 隐私与安全性”中点击“仍要打开”。
 
-1.3.9 及更早版本仍内置已停用的 R2 地址，不能通过新清单自动迁移；请先手动安装 1.3.10。
+如果明确提示“应用已损坏，无法打开”，请先重新下载 DMG，并确认校验值与 `SHA256SUMS.txt` 完全一致。确认无误后，将应用拖到“应用程序”，在终端执行：
 
-## 中国用户下载 / Download availability
+```bash
+xattr -dr com.apple.quarantine "/Applications/SuperWriter.app"
+open "/Applications/SuperWriter.app"
+```
 
-如果当前网络无法下载 GitHub Releases，请等待后续公布的官方备用下载渠道。目前尚未配置国内镜像。
+这只移除该下载文件的 quarantine 标记，不会关闭 macOS Gatekeeper。不要对 SHA-256 不匹配的文件执行此操作，也不要使用 `sudo spctl --master-disable` 全局关闭安全保护。
 
-任何官方镜像都应提供与本 Release 一致的文件和 SHA-256 校验值。请勿向第三方下载站提供账号密码、激活信息或签名私钥。
+如果仍然无法打开，可检查应用签名：
+
+```bash
+codesign --verify --deep --strict --verbose=2 \
+  "/Applications/SuperWriter.app"
+```
+
+如果签名校验失败，请删除应用并从本仓库重新下载；反馈时请提供 macOS 版本、芯片类型和完整错误提示。当前安装包是 Apple Silicon（M 系列）版本。
 
 ## 反馈 / Feedback
 
