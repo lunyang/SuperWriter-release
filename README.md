@@ -8,10 +8,10 @@ This repository distributes SuperWriter installers and release information. Appl
 
 ## 下载 / Download
 
-**当前版本：1.3.9 · macOS Apple Silicon（M 系列芯片）**
+**当前版本：1.3.10 · macOS Apple Silicon（M 系列芯片）**
 
-- [下载 macOS 安装包（约 415 MB）](https://github.com/lunyang/SuperWriter-release/releases/download/v1.3.9/SuperWriter_1.3.9_aarch64.dmg)
-- [查看发布说明和全部附件](https://github.com/lunyang/SuperWriter-release/releases/tag/v1.3.9)
+- [下载 macOS 安装包（约 415 MB）](https://github.com/lunyang/SuperWriter-release/releases/download/v1.3.10/SuperWriter_1.3.10_aarch64.dmg)
+- [查看发布说明和全部附件](https://github.com/lunyang/SuperWriter-release/releases/tag/v1.3.10)
 - [查看所有版本](https://github.com/lunyang/SuperWriter-release/releases)
 
 本次仅发布 macOS ARM64 版本，不包含 Intel Mac、Windows 或 Linux 安装包。此版本已在构建机器上通过产物检查；不同 macOS 版本的兼容性仍需实际验证。
@@ -30,7 +30,7 @@ The macOS build is ad-hoc signed and is not Apple-notarized. Verify its origin a
 
 | 文件 | 用途 |
 | --- | --- |
-| `SuperWriter_1.3.9_aarch64.dmg` | 首次安装或手动升级 |
+| `SuperWriter_1.3.10_aarch64.dmg` | 首次安装或手动升级 |
 | `SuperWriter.app.tar.gz` | Tauri 自动更新用的应用归档 |
 | `SuperWriter.app.tar.gz.sig` | 更新归档的数字签名 |
 | `latest.json` | 版本号、更新包地址和签名清单，目前只含 macOS ARM64 |
@@ -39,16 +39,16 @@ The macOS build is ad-hoc signed and is not Apple-notarized. Verify its origin a
 下载要校验的文件及 `SHA256SUMS.txt`，在同一目录执行，例如：
 
 ```bash
-shasum -a 256 SuperWriter_1.3.9_aarch64.dmg
+shasum -a 256 SuperWriter_1.3.10_aarch64.dmg
 ```
 
 将结果与 `SHA256SUMS.txt` 中该文件的记录比较。更新签名不等于 Apple 公证。
 
 ## 自动更新状态 / Updater status
 
-**当前 1.3.9 安装包仍配置旧下载域名 `superwriter.ai4scis.com`，该域名的 R2 服务目前不可用。请通过本仓库手动下载安装。**
+1.3.10 已将内置自动更新地址迁移到 GitHub Releases：`https://github.com/lunyang/SuperWriter-release/releases/latest/download/latest.json`。后续正式版本会通过该清单检查更新，并验证更新归档的签名。
 
-本 Release 的 `latest.json` 已指向本仓库的 macOS 更新归档，供后续迁移使用。发布该清单不会改变已安装应用内置的更新地址。待后续版本切换更新地址，或原域名恢复兼容服务后，才能恢复自动更新。
+1.3.9 及更早版本仍内置已停用的 R2 地址，不能通过新清单自动迁移；请先手动安装 1.3.10。
 
 ## 中国用户下载 / Download availability
 
